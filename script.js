@@ -59,3 +59,26 @@ document.addEventListener('mousemove', function(e) {
         heart.remove();
     }, 2000);
 });
+
+
+function createFallingHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("falling-heart");
+    heart.innerHTML = "❤"; // You can use "♥" or any heart emoji
+    
+    // Randomize position and speed
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = Math.random() * 3 + 2 + "s"; // 2-5 seconds
+    heart.style.opacity = Math.random();
+    heart.style.fontSize = Math.random() * 20 + 10 + "px";
+
+    document.body.appendChild(heart);
+
+    // Remove heart after it falls to keep the site fast
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+// Start the rain! (Creates a heart every 300ms)
+setInterval(createFallingHeart, 300);
