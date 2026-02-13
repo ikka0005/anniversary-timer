@@ -93,6 +93,23 @@ body::before {
     animation: fadeIn 2s ease-in;
 }
 
+.falling-heart {
+    position: fixed;
+    top: -10px;
+    color: #ff4d6d; /* You can change the heart color here */
+    font-size: 20px;
+    user-select: none;
+    pointer-events: none;
+    z-index: 9999;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
 #clock {
     font-size: 1.5rem;
     font-weight: bold;
