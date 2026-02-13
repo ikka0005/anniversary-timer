@@ -121,3 +121,20 @@ body::before {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
+#peeping-boy {
+    position: fixed;
+    z-index: 10000;
+    width: 90px; /* Adjust size to fit your character */
+    right: -90px; /* Hidden off-screen by default */
+    bottom: -2%;   /* Position him 30% up from the bottom */
+    transform: rotate(0deg); /* Rotates him to face the center */
+    transition: right 0.6s ease-in-out;
+    pointer-events: none;
+    display: block !important;
+}
+
+/* This class pulls him into view */
+#peeping-boy.peek {
+    right: -10px !important;
+}
