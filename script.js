@@ -82,3 +82,25 @@ function createFallingHeart() {
 
 // Start the rain! (Creates a heart every 300ms)
 setInterval(createFallingHeart, 300);
+
+function startPeeking() {
+    const boy = document.getElementById('peeping-boy');
+    if (!boy) return;
+
+    // Slide him in
+    setTimeout(() => {
+        boy.classList.add('peek');
+    },2500);
+
+
+    // Slide him out after 5 seconds
+    setTimeout(() => {
+        boy.classList.remove('peek');
+    }, 5000);
+
+    // Random wait time (5-12 seconds) for the next peek
+    const nextDelay = Math.random() * 7000 + 5000;
+    setTimeout(startPeeking, nextDelay);
+}
+
+window.onload = startPeeking;
